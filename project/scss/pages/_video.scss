@@ -1,0 +1,36 @@
+/*** PAGE VIDEO ***/
+.pageVideo{
+    .mainVideo{
+        position:relative;
+        a{
+            font-weight:bold;
+            text-decoration:none;
+            color:inherit;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+        .bannerOh{
+            top:25px;
+        }
+        figure{
+            margin-bottom:50px;
+            #pvpContainer{
+                height:600px;
+            }
+        }
+        h1{
+            font-size:rem-calc(48px);
+            color:$colorBlack;
+            margin:10px 0 40px;
+        }
+        p{
+            font-size:rem-calc(20px);
+            + p{
+                margin-top:25px;
+            }
+        }
+    }
+}
+
+

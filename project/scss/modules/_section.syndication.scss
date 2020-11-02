@@ -1,0 +1,77 @@
+/***********************************
+            BARRE DE SYNDICATION
+***********************************/
+
+/**
+ * Buttons
+ */
+$btnColor   : #AAA;
+$fbColor    : #3B5998;
+$twColor    : #00ACED;
+$gpColor    : #DD4B39;
+$inColor    : #007BB6;
+$pinColor   : #CB2027;
+$activeColor: #FFF;
+
+/**
+ * BOTTOM SOCIAL LINKS BAR
+ */
+.syndication-bar {
+
+    p {
+        float : left;
+    }
+
+    .bt-soc {
+        display     : inline-block;
+        line-height : 30px;
+
+        .nom {
+            font-family : $OrangeLight;
+            font-size   : 0.8em;
+            margin-left : 8px;
+        }
+
+        &.bt-fb:hover {
+            background-color: $fbColor;
+            color : $activeColor;
+        }
+
+        &.bt-tw:hover {
+            background-color: $twColor;
+            color : $activeColor;
+        }
+
+        &.bt-gp:hover {
+            background-color: $gpColor;
+            color : $activeColor;
+        }
+
+        &.bt-in:hover {
+            background-color: $inColor;
+            color : $activeColor;
+        }
+
+        &.bt-pin:hover {
+            background-color: $pinColor;
+            color : $activeColor;
+        }
+    }
+
+    & [class*=" bt-"] {
+        background   : #e0e0e0;
+        color        : #777;
+
+        span {
+            display    : block;
+            float      : left;
+            font-size  : 18px;
+            line-height: 30px;
+        }
+    }
+
+    & [class*=" bt-"]:hover,
+        & .bt-soc:hover .nom {
+        color : #FFF;
+    }
+}

@@ -1,0 +1,44 @@
+/*** PAGE ARTICLE ***/
+.pageArticle{
+    .mainArticle{
+        position:relative;
+        a{
+            font-weight:bold;
+            text-decoration:none;
+            color:inherit;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+        .bannerOh{
+            top:25px;
+        }
+        figure{
+            margin-bottom:50px;
+            figcaption{
+                position:absolute;
+                top:100px;
+                left:55px;
+                h1{
+                    font-size:rem-calc(48px);
+                    color:$colorBlack;
+                }
+            }
+            legend{
+                margin:5px 0 0;
+                font-size:rem-calc(14px);
+            }
+        }
+        .intro{
+            margin-bottom:40px;
+            p{
+                font-size:rem-calc(20px);
+            }
+        }
+        p + p{
+            margin-top:25px;
+        }
+    }
+}
+
+

@@ -1,0 +1,38 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/* Fluidgrid configuration for Desktop */
+$device: 'desktop';
+$collapse:false;
+$gutter:1px;
+$container:1280px;
+
+//Breakpoints
+$desktop:(
+	'small':  0px,
+	'medium':  768px,
+	'large':  1024px
+) !default;
+
+
+$media-queries:(
+	grid-s:  "only screen and (min-width:#{map-get($desktop, small)})",
+	grid-m:  "only screen and (min-width:#{map-get($desktop, medium)})",
+	grid-l:  "only screen and (min-width:#{map-get($desktop, large)})"
+);
+
+
+//Import orangeStrap
+@import "../../core/all-core";
+
+//Import project styles
+@import "all-project";
+
+/* Start specific css for Desktop */
+.grid-container{
+	min-width:800px;
+}
+

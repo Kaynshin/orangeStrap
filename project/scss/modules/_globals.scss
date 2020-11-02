@@ -1,0 +1,86 @@
+/******************************************************************************
+  Polaris
+
+   
+  _globals.scss
+
+  Copyright 2014 Orange / MFY /Contributors
+******************************************************************************/
+
+/* ========================================================
+    VARIABLES
+======================================================== */
+/* colors */
+$orangeColor:#ff7900;
+$orangeDarkColor:#F16E00;
+$orangeHoverColor : #C15700;
+$orangeActiveColor : #914200;
+$polaris-color-text-color-default : #333;
+$polaris-color-image-background-color-default : #000;
+$black : #000;
+$white : #FFF;
+$darkGrey : #333;
+$lightGrey : #666;
+$lighterGrey : #999;
+$tileGrey : #EEE;
+$buttonGrey : #C2C4CA;
+$fontSizeMainMenuOptions : 0.9375em !important;
+$placeholderColor : #B2B2B2;
+
+
+/* ========================================================
+    MIXINS
+======================================================== */
+
+@mixin OrangeThin($font-size : 1em) {
+    font : normal normal 400 $font-size "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin OrangeLight($font-size : 1em) {
+    font : normal normal 400 $font-size "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin OrangeRoman($font-size : 1em) {
+    font : normal normal 400 $font-size "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin OrangeMedium($font-size : 1em) {
+    font : normal normal 700 $font-size "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin OrangeBold($font-size : 1em) {
+    font : normal normal 700 $font-size "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+}
+
+@mixin roman-font {
+    font-family : "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+    font-weight : 400;
+}
+
+@mixin bold-font {
+    font-family : "Helvetica Neue", "HelveticaNeue", "Orange Sans", Helvetica, Arial, sans-serif;
+    font-weight : 700;
+}
+
+$OrangeThin: unquote("'HelveticaNeueRoman', 'HelveticaNeue55', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'Helvetica Neue', 'Orange Sans', Helvetica, Arial, sans-serif");
+$OrangeLight: unquote("'HelveticaNeueRoman', 'HelveticaNeue55', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'Helvetica Neue', 'Orange Sans', Helvetica, Arial, sans-serif");
+$OrangeRoman: unquote("'HelveticaNeueRoman', 'HelveticaNeue55', 'HelveticaNeue-Roman', 'Helvetica Neue Roman', 'Helvetica Neue', 'Orange Sans', Helvetica, Arial, sans-serif");
+$OrangeMedium: unquote("'HelveticaNeueBold', 'HelveticaNeue75', 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', 'Orange Sans', Helvetica, Arial, sans-serif");
+$OrangeBold: unquote("'HelveticaNeueBold', 'HelveticaNeue75', 'HelveticaNeue-Bold', 'Helvetica Neue Bold', 'Helvetica Neue', 'Orange Sans', Helvetica, Arial, sans-serif");
+
+.share-container {
+   margin-top: 50px;
+   border-bottom: 1px solid #AAA;
+   border-top: 1px solid #AAA;
+   line-height: 30px;
+   padding: 10px 0;
+   color: #AAA;
+  }
+  .share-container A {
+   text-decoration: none !important
+  }
+
+
+
+
+

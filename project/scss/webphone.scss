@@ -1,0 +1,202 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/* Fluidgrid configuration for Webphone */
+$device: 'webphone';
+$collapse:false;
+$gutter:1px;
+$container:100%;
+
+//Breakpoints
+$webphone:(
+	'small':  0px,
+	'medium':  375px,
+	'large':  480px
+) !default;
+
+$media-queries:(
+	grid-s:  "only screen and (min-width:#{map-get($webphone, small)})",
+	grid-m:  "only screen and (min-width:#{map-get($webphone, medium)})",
+	grid-l:  "only screen and (min-width:#{map-get($webphone, large)})"
+);
+
+//Import orangeStrap
+@import "../../core/all-core";
+
+//Import project styles
+@import "all-project";
+
+/* Start specific css for Webphone */
+.grid-container{
+	max-width:1280px;
+}
+
+section + section{
+	margin-top:20px;
+}
+
+#container:not(.pageHp){
+	.n1BackButton{
+		margin-left:2%;
+	}
+	section:not(.fullWidth){
+		width:96%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.bannerOh{
+		top:0;
+		right:0;
+	}
+	.bannerOhMedium{
+		font-size:rem-calc(24px);
+	}
+	h1{
+		font-size:rem-calc(24px);
+	}
+	figure{
+		h1{
+			font-size:rem-calc(30px);
+		}
+	}
+	.mainArticle{
+		figure{
+			.image{
+				padding-top:42px;
+			}
+			legend{
+				margin-right:10px;
+			}
+		}
+		h2{
+			font-weight:bold;
+		}
+		.contenu{
+			font-size:rem-calc(20px);
+		}
+	}
+	.mainDiapo{
+		.mainTitle{
+			height:60px;
+			line-height:60px;
+			.category{
+				height:auto;
+				line-height:60px;
+				vertical-align:middle;
+				border:none;
+				font-size:rem-calc(36px);
+			}
+		}
+		h1{
+			padding:20px 20px 0 20px;
+		}
+	}
+	.sliderOthers{
+		height:auto;
+		.otherArticles{
+			margin-bottom:$gutter;
+			figure{
+				max-width:100%;
+				max-height:100%;
+			}
+		}
+	}
+	.sliderDiapos{
+		img{
+//			max-height:200px;
+		}
+	}
+	.fullWidth{
+		h3,h4{
+			float:none !important;
+			width:96%;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	}
+	.relatedArticles{
+		+ .relatedArticles{
+			margin-top:$gutter;
+		}
+		figcaption{
+			right:0;
+		}
+		&:not(.relatedVideo){
+			.image{
+				padding-top:49px;
+			}
+		}
+	}
+	.mainVideo{
+		figure{
+			padding-top:42px;
+			.embedVideo{
+				height:auto;
+			}
+		}
+	}
+}
+
+/* HP */
+#container{
+	.bannerOhBig{
+		font-size:rem-calc(30px);
+	}
+	.bannerOh{
+		font-size:rem-calc(26px);
+	}
+	#content{
+		.articleBig{
+			&:first-child{
+				min-height:250px;
+				.bannerOhBig{
+					right:0;
+					height:50px;
+					line-height:50px;
+				}
+			}
+			.bannerOh{
+				right:0;
+			}
+			.image{
+				padding-top:42px;
+			}
+		}
+		.introText{
+			width:auto;
+			height:auto;
+			top:50px;
+			right:0;
+			h1{
+				font-size:rem-calc(26px);
+				margin-bottom:10px;
+			}
+			p{
+				font-size:rem-calc(13px);
+			}
+		}
+		.footerRm{
+			.grid-row{
+				+ .grid-row{
+					margin-top:$gutter;
+				}
+			}
+		}
+	}
+	.osocial-share{
+		padding-left:10px;
+		padding-right:10px;
+	}
+}
+
+.blockRm{
+	margin:20px auto 0;
+}
+
+.ope-spe-corsa{
+	width:100% !important;
+}
+

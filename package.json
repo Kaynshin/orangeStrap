@@ -1,0 +1,22 @@
+{
+  "name": "BMW",
+  "title": "BMW",
+  "url": "",
+  "author": "David Jomain",
+  "copyright": "2015",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt-concurrent": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-compass": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-svgmin": "latest",
+    "grunt-usemin": "latest",
+    "matchdep": "latest",
+    "time-grunt": "latest"
+  }
+}

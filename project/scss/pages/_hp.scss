@@ -1,0 +1,113 @@
+/*** PAGE HP ***/
+.pageHp{
+    aside{
+        .sticky-wrapper{
+            position:absolute;
+            top:15%;
+        }
+        ul{
+            position:absolute;
+            top:0;
+            width:10px;
+            height:110px;
+            margin-left:15px;
+        }
+    }
+    #content{
+        .introText{
+            h1{
+                font-size:rem-calc(36px);
+                margin-bottom:15px;
+            }
+            p{
+                display:inline;
+                font-size:rem-calc(16px);
+            }
+            .arrowBlack{
+                margin:0 0 0 10px;
+                @include transition(all ease .3s);
+            }
+            &:hover{
+                .arrowBlack{
+                    margin-left:15px;
+                }
+            }
+        }
+        .articleBig{
+            .phantomLink{
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:66%;
+                z-index:2;
+                //arrow yellow
+                .bigYellow{
+                    @include icon($type:'arrow',$name:'bigYellowRight');
+                    position:absolute;
+                    bottom:65px;
+                    right:65px;
+                    z-index:2;
+                    @include transition(all ease .3s);
+                }
+                &:hover{
+                    .bigYellow{
+                        right:60px;
+                    }
+                }
+            }
+        }
+        .footerRm{
+            $maxHeightVideo:224px;
+            $maxHeightRm:($maxHeightVideo*2)+$gutter;
+            margin-top:$gutter;
+            .sizer{
+                max-height:$maxHeightRm;
+            }
+            a{
+                display:block;
+            }
+            .colRm{
+//                display:block;
+                max-width:470px;
+                padding-right:0;
+                overflow:hidden;
+                .blockRm{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    bottom:0;
+                    right:0;
+                    background:$colorBlack;
+                    text-align:center;
+                    max-height:$maxHeightRm;
+                    > div{
+                        position:absolute;
+                        top:50%;
+                        left:50%;
+                        margin:-125px 0 0 -150px;
+                        display:inline-block;
+                    }
+                }
+            }
+            .footerVideos{
+                padding-right:0;
+                a{
+                    display:block;
+                }
+                .grid-col{
+                    .image{
+//                        max-width:385px;
+//                        max-height:(($maxHeight/2)-($gutter/2));
+                        max-height:$maxHeightVideo;
+//                        height:$maxHeightVideo;
+                    }
+                }
+                .grid-table + .grid-table{
+                    margin-top:$gutter;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+/*** SLIDERS ***/
+
+/* sliderOthers */
+.sliderOthers{
+    height:240px;
+    overflow:hidden;
+}
+
+.othersArrows{
+    position:relative;
+    width:100px;
+    height:27px;
+    .yellowRoundLeft,
+    .yellowRoundRight{
+        position:absolute;
+        top:0;
+        right:10px;
+    }
+    .yellowRoundLeft{
+        right:47px;
+    }
+}

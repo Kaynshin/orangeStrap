@@ -1,0 +1,96 @@
+/*** PAGE DIAPO ***/
+.pageDiapo{
+    .mainDiapo{
+        position:relative;
+        background:$colorBlack;
+        color:$colorWhite;
+        a{
+            font-weight:bold;
+            text-decoration:none;
+            color:inherit;
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+        .mainTitle{
+            height:65px;
+            line-height:65px;
+            border-bottom:2px solid $colorBorderGrey;
+            .category{
+                height:25px;
+                line-height:25px;
+                border-right:2px solid $colorBorderGrey;
+                display:inline-block;
+                padding:0 20px;
+                margin:0 20px 0 0;
+                color:$colorYellow;
+            }
+        }
+        h1{
+            display:inline-block;
+            width:70%;
+            font-size:rem-calc(22px);
+        }
+        .accroche{
+            padding:20px;
+            color:$colorDarkGrey;
+        }
+        .slick-arrow{
+            position:absolute;
+            top:45%;
+            margin-top:-34px;
+            z-index:2000;
+            cursor:pointer;
+            &.yellowBigLeft{
+                left:50px;
+            }
+            &.yellowBigRight{
+                right:50px;
+            }
+            &.webphoneDiapoLeft{
+                left:0;
+            }
+            &.webphoneDiapoRight{
+                right:0;
+            }
+        }
+        .sliderDiapos{
+            position:relative;
+            max-width:1280px;
+            width:100%;
+            overflow:hidden;
+            .slide{
+                float:left;
+                width:100%;
+                .desc{
+                    display:block;
+                    width:100%;
+                    min-width:100%;
+                    padding:20px;
+                    h2{
+                        font-size:rem-calc(24px);
+                        font-weight:bold;
+                        color:$colorWhite;
+                        margin:0 0 15px;
+                    }
+                    p{
+                        font-size:rem-calc(20px);
+                        color:$colorWhite;
+                    }
+                    small{
+                        display:block;
+                        margin-top:10px;
+                        color:$colorDarkGrey;
+                    }
+                    .indexes{
+                        display:block;
+                        text-align:right;
+                        font-size:rem-calc(20px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,140 @@
+/*** ICONS ***/
+@mixin icon($type:null,$name:null){
+    display:block;
+    overflow:hidden;
+    background:transparent url('../icons/sprite.png') no-repeat 0 0;
+    text-indent:-999em;
+    @if($type == 'arrow'){
+        @include transition(opacity ease .3s);
+        &.slick-disabled{
+            @include opacity(.5);
+        }
+        @if($name == 'bigYellowRight'){
+            width:37px;
+            height:67px;
+            background-position:0 0;
+        }
+        @if($name == 'bigYellowLeft'){
+            width:37px;
+            height:67px;
+            background-position:-40px 0;
+        }
+        @if($name == 'yellowRoundLeft'){
+            cursor:pointer;
+            width:27px;
+            height:27px;
+            background-position:0 -96px;
+        }
+        @if($name == 'yellowRoundRight'){
+            cursor:pointer;
+            width:27px;
+            height:27px;
+            background-position:-32px -96px;
+        }
+        @if($name == 'webphoneDiapoLeft'){
+            cursor:pointer;
+            width:32px;
+            height:51px;
+            background-position:-120px 0;
+        }
+        @if($name == 'webphoneDiapoRight'){
+            cursor:pointer;
+            width:32px;
+            height:51px;
+            background-position:-88px 0;
+        }
+        @if($name == 'black'){
+            display:inline-block;
+            vertical-align:middle;
+            width:10px;
+            height:17px;
+            background-position:0 -72px;
+        }
+    }
+    @if($type == 'bullet'){
+        width:10px;
+        height:10px;
+        margin:10px 0;
+        background-image:none;
+        background:$colorGrey;
+        cursor:pointer;
+        @include border-radius(100%);
+        @include transition(all ease .3s);
+        &.active,
+        &:hover{
+            background:$colorOrange;
+        }
+    }
+}
+
+/* icon categories */
+@mixin category($type:null,$name:null){
+    position:relative;
+    &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        background:transparent url('../icons/sprite.png') no-repeat 0 0;
+        @if($type == 'play'){
+            top:50%;
+            left:50%;
+            z-index:2;
+            @if($name == 'videoMedium'){
+                width:59px;
+                height:59px;
+                margin:-30px 0 0 -30px;
+                background-position:0 -127px;
+            }
+            @if($name == 'videoMini'){
+                width:45px;
+                height:45px;
+                margin:-23px 0 0 -23px;
+                background-position:-64px -127px;
+            }
+        }
+        @if($type == 'diapo'){
+            top:10px;
+            right:10px;
+            width:18px;
+            height:19px;
+            background-position:-64px -96px;
+        }
+    }
+}
+
+/* definitions */
+.bullet{
+    @include icon($type:'bullet',$name:null);
+}
+.arrowBlack{
+    @include icon($type:'arrow',$name:'black');
+}
+.yellowBigLeft{
+    @include icon($type:'arrow',$name:'bigYellowLeft');
+}
+.yellowBigRight{
+    @include icon($type:'arrow',$name:'bigYellowRight');
+}
+.yellowRoundLeft{
+    @include icon($type:'arrow',$name:'yellowRoundLeft');
+}
+.yellowRoundRight{
+    @include icon($type:'arrow',$name:'yellowRoundRight');
+}
+.webphoneDiapoLeft{
+    @include icon($type:'arrow',$name:'webphoneDiapoLeft');
+}
+.webphoneDiapoRight{
+    @include icon($type:'arrow',$name:'webphoneDiapoRight');
+}
+
+//categories
+.typeVideoMedium{
+    @include category($type:'play',$name:'videoMedium');
+}
+.typeVideoMini{
+    @include category($type:'play',$name:'videoMini');
+}
+.typeDiapo{
+    @include category($type:'diapo',$name:null);
+}

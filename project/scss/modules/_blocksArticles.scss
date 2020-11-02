@@ -1,0 +1,49 @@
+/*** BLOCKS ARTICLES ***/
+.otherArticles{
+    a{
+        height:240px;
+        width:100%;
+        display:block;
+        color:$colorBlack;
+        background:$colorWhite;
+    }
+    figure{
+        max-width:215px;
+        max-height:120px;
+    }
+    .infos{
+        padding:10px;
+        font-size:rem-calc(14px);
+        .title{
+            display:block;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            width:100%;
+        }
+        strong{
+            display:block;
+            margin-top:10px;
+        }
+    }
+}
+
+.relatedArticles{
+    &:not(.relatedVideo){
+        .typeDiapo:after{
+            top:auto;
+            bottom:10px;
+            right:10px;
+            left:auto;
+        }
+        .typeVideoMedium:after{
+            margin-top:-10px;
+        }
+        .typeVideoMini:after{
+            margin-top:10px;
+        }
+    }
+}
+
+
+

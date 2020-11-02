@@ -1,0 +1,55 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/* Fluidgrid configuration for Tablet */
+$device: 'tablet';
+$collapse:false;
+$gutter:1px;
+$container:100%;
+
+//Breakpoints
+$tablet:(
+	'small':  0px,
+	'medium':  533px,
+	'large':  769px
+) !default;
+
+$media-queries:(
+	grid-s:  "only screen and (min-width:#{map-get($tablet, small)})",
+	grid-m:  "only screen and (min-width:#{map-get($tablet, medium)})",
+	grid-l:  "only screen and (min-width:#{map-get($tablet, large)})"
+);
+
+//Import orangeStrap
+@import "../../core/all-core";
+
+//Import project styles
+@import "all-project";
+
+/* Start specific css for Tablet */
+.grid-container{
+	max-width:1280px;
+}
+
+
+#container:not(.pageHp){
+	.n1BackButton{
+		margin-left:2%;
+	}
+	section:not(.fullWidth){
+		width:96%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.bannerOhMedium{
+		font-size:rem-calc(24px);
+	}
+	figure{
+		h1{
+			font-size:rem-calc(30px);
+		}
+	}
+}

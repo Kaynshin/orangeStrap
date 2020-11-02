@@ -1,0 +1,257 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/*** VARIABLES ***/
+/* Fluid Grid variables */
+$device: 'desktop' !default;
+$container: 100% !default;
+$totalColumns: 12 !default;
+$gutter: 2% !default;
+//$gridName: 'grid' !default;
+$collapse: true !default;
+
+/* Breakpoints by devices */
+//$desktop:(
+//	'small':  0px,
+//	'medium':  768px,
+//	'large':  1024px
+//) !default;
+//$tablet:(
+//	'small':  0px,
+//	'medium':  533px,
+//	'large':  769px
+//) !default;
+//$webphone:(
+//	'small':  0px,
+//	'medium':  375px,
+//	'large':  480px
+//) !default;
+
+/* Media queries */
+//$screen: "only screen" !default;
+
+//$media-queries:(
+//	desktop:(
+//		grid-s:     "only screen and (min-width:#{map-get($desktop, small)})",
+//		grid-m:     "only screen and (min-width:#{map-get($desktop, medium)})",
+//		grid-l:     "only screen and (min-width:#{map-get($desktop, large)})"
+//	),
+//	tablet:(
+//		grid-s:     "only screen and (min-width:#{map-get($tablet, small)})",
+//		grid-m:     "only screen and (min-width:#{map-get($tablet, medium)})",
+//		grid-l:     "only screen and (min-width:#{map-get($tablet, large)})"
+//	),
+//	webphone:(
+//		grid-s:     "only screen and (min-width:#{map-get($webphone, small)})",
+//		grid-m:     "only screen and (min-width:#{map-get($webphone, medium)})",
+//		grid-l:     "only screen and (min-width:#{map-get($webphone, large)})"
+//	)
+//);
+
+/* Landscape & Portrait */
+$orientation:(
+	portrait:    "only screen and (orientation:portrait)",
+	landscape:   "only screen and (orientation:landscape)"
+);
+
+/*** FUNCTION & MIXINS ***/
+/* Width calculator for cols */
+@function grid-calc($colNumber, $totalColumns) {
+  $result: percentage(($colNumber / $totalColumns));
+  @if $result == 0% { $result: 0; }
+  @return $result;
+}
+@mixin clearfix {
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+
+/* Build grid container */
+@mixin build-container($container){
+	position:relative;
+	max-width: $container;
+	margin:0 auto;
+}
+
+/* Building rows */
+@mixin build-row($nested, $collapse){
+	@if $nested == false{
+		position:relative;
+		width:auto;
+		max-width:$container;
+		*zoom: 1;
+		clear:both;
+		@include clearfix();
+	}
+	@else{
+		@if $collapse == true{
+			margin:0 auto;
+		}
+		@else if $collapse == false{
+//			margin:0 (-($gutter/2));
+			margin:0 auto;
+		}
+	}
+	&.grid-unbordered{
+		width:calc(100% + #{$gutter});
+		margin-left:-($gutter/2);
+	}
+	&.grid-table{
+		display:table;
+	}
+}
+
+/* Table mode */
+.grid-table{
+	> .grid-col{
+		float:none !important;
+		display:table-cell;
+		vertical-align:top;
+	}
+}
+
+/* Nested rows */
+@mixin rows-nested($size){
+	&.collapse,
+	&.#{$size}-collapse{
+		@include build-row($nested:true, $collapse:true);
+	}
+	&.uncollapse,
+	&.#{$size}-uncollapse{
+		@include build-row($nested:true, $collapse:false);
+	}
+}
+
+/* Building cols */
+.grid-col{
+	position:relative;
+	float: left;
+	min-height: 1px; // http://css-tricks.com/make-sure-columns-dont-collapse-horizontally/
+	*clear: right;   /* fix ie7 percentage float problem */
+	.grid-col{
+		*clear: none;
+	}
+}
+
+@mixin build-col($cols, $collapse, $center: false){
+	@if $cols != false{
+		width: grid-calc($cols, $totalColumns);
+	}
+	@if $collapse{
+		padding-left:0;
+		padding-right:0;
+	}
+	@else if $collapse == false{
+		padding-left:($gutter/2);
+		padding-right:($gutter/2);
+	}
+	@if $center{
+		float:none;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	@else if $center == false{
+		float:left;
+		margin-left:0;
+		margin-right:0;
+	}
+}
+
+//Building classes
+@mixin grid-classes($size, $device){
+	.grid-row{
+		@for $i from 1 through $totalColumns{
+			.#{$size}-#{$i}{
+				@include build-col($cols: $i, $collapse: $collapse, $center: false);
+				&.#{$size}-centered{
+					@include build-col($cols: $i, $collapse: $collapse, $center: true);
+				}
+				&.#{$size}-uncentered{
+					@include build-col($cols: $i, $collapse: $collapse, $center: false);
+				}
+			}
+		}
+		@for $i from 1 through $totalColumns{
+			.#{$device}-#{$size}-#{$i}{
+				@include build-col($cols: $i, $collapse: $collapse, $center: false);
+				&.#{$device}-#{$size}-centered{
+					@include build-col($cols: $i, $collapse: $collapse, $center: true);
+				}
+				&.#{$device}-#{$size}-uncentered{
+					@include build-col($cols: $i, $collapse: $collapse, $center: false);
+				}
+			}
+		}
+		&.collapse,
+		&.#{$size}-collapse{
+			> .grid-col{
+					@include build-col($cols: false, $collapse: true, $center: false);
+					//nested row
+					.grid-row{
+						@include rows-nested($size);
+					}
+			}
+		}
+		&.uncollapse,
+		&.#{$size}-uncollapse{
+			> .grid-col{
+					@include build-col($cols: false, $collapse: false, $center: false);
+					//nested rows
+					.grid-row{
+						@include rows-nested($size);
+					}
+			}
+		}
+	}
+}
+
+/* Build orientation conditional display */
+@mixin grid-orientation($orientation){
+	.grid-row,
+	.grid-col{
+		&.#{$orientation}-hidden{
+			display:none;
+		}
+		&.#{$orientation}-show{
+			display:block;
+		}
+	}
+}
+
+/*** INITIALISATION ***/
+/* init grid container */
+.grid-container{
+	@include build-container($container);
+}
+
+/* init rows & cols */
+.grid-row{
+	@include build-row($nested: false, $collapse: $collapse);
+	.grid-row{
+		@include build-row($nested: true, $collapse: $collapse);
+	}
+	.grid-col{
+		@include build-col($cols: false, $collapse: $collapse);
+	}
+}
+
+/* Generated html classes based on breakpoints by devices */
+@each $mqType, $mq in $media-queries{
+	@media #{$mq}{
+		@include grid-classes($mqType, $device);
+	}
+}
+
+
+
+/* Orientation conditional display */
+@each $type, $value in $orientation{
+	@media #{$value}{
+//		@each $deviceType, $breakpoint in $media-queries{
+			@include grid-orientation($type);
+//		}
+	}
+}

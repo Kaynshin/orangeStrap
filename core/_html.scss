@@ -1,0 +1,29 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+// Must be 100% for off canvas to work
+html, body { height: 100%; }
+
+// Set box-sizing globally to handle padding and border widths
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+$rem-base:16px !default;
+$base-font-size:100%;
+
+body{
+	font-family:Arial, sans-serif;
+    font-size:$base-font-size;
+}
+strong{
+	font-weight:bold;
+}

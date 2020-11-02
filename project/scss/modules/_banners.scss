@@ -1,0 +1,102 @@
+/*** BANNERS OH! ***/
+@mixin bannerOh($type:null){
+    $height:42px;
+    position:absolute;
+    top:0;
+    left:0;
+    height:$height;
+    line-height:$height;
+    font-size:rem-calc(36px);
+    padding:0 10px;
+    white-space:nowrap;
+    background:$colorBlack;
+    color:$colorYellow;
+    font-size:rem-calc(36px);
+    &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        left:23px;
+        bottom:-17px;
+        border-style: solid;
+        border-width: 0 13px 17px 0;
+        border-color: transparent $colorBlack transparent transparent;
+    }
+    @if($type == 'medium'){
+        $height:49px;
+        left:($gutter/2);
+        right:($gutter/2);
+        height:$height;
+        line-height:$height;
+        font-size:rem-calc(42px);
+    }
+    @if($type == 'big'){
+        $height:57px;
+        height:$height;
+        line-height:$height;
+        font-size:rem-calc(49px);
+    }
+}
+
+@mixin bannerFigcaption($type:null){
+    position:absolute;
+    top:0;
+    left:0;
+    padding:10px;
+    color:$colorBlack;
+    overflow:hidden;
+    background:transparent url('../icons/whiteTransparent.png') repeat 0 0;
+    z-index:2;
+    @if($type == 'articleBig'){
+        top:57px;
+        left:36px;
+        width:390px;
+        max-width:390px;
+        max-height:175px;
+        padding:10px 20px 20px;
+    }
+    @if($type == 'relatedArticles'){
+        top:49px;
+        left:36px;
+        font-size:rem-calc(12px);
+        font-weight:bold;
+        color:$colorBlack;
+    }
+}
+
+/* DECLARATIONS */
+.bannerOh{
+    @include bannerOh($type:null);
+}
+.bannerOhMedium{
+    @include bannerOh($type:'medium');
+}
+.bannerOhBig{
+    @include bannerOh($type:'big');
+}
+
+//hp page
+.pageHp{
+    #content{
+        .introText{
+            @include bannerFigcaption($type:'articleBig');
+        }
+    }
+}
+
+//page articles
+.relatedArticles{
+    figcaption{
+        @include bannerFigcaption($type:'relatedArticles');
+    }
+}
+
+/* CUSTOMS */
+.bannerBottom{
+    position:absolute;
+    bottom:0;
+    left:($gutter/2);
+    .image{
+        width:calc(100% - (#{$gutter}/2));
+    }
+}

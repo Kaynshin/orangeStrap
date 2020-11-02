@@ -1,0 +1,106 @@
+/*** STRUCTURE ***/
+body{
+	background:$colorBackground;
+}
+
+section + section{
+	margin-top:60px;
+}
+
+/* TYPOGRAPHY */
+h2{
+	font-size:rem-calc(24px);
+	color:$colorBlack;
+	margin:25px 0;
+}
+h3{
+	font-size:rem-calc(30px);
+	margin-bottom:10px;
+}
+h4{
+	font-size:rem-calc(24px);
+	margin-bottom:15px;
+}
+
+p{
+	line-height:1.2em;
+	+ p{
+		margin-top:10px;
+	}
+}
+
+/* IMAGES */
+.image{
+	width:100%;
+}
+
+/* COLORS */
+.alternateBackground{
+	background:$colorAlternativeBackground;
+}
+
+/* OTHER */
+.verticalPadding{
+	padding-top:40px;
+	padding-bottom:40px;
+}
+
+/* CONTAINER */
+$asideWidth:40px;
+$contentWidth:calc(100% - #{$asideWidth});
+
+#container{
+	aside{
+		width:$asideWidth;
+	}
+	#content{
+		width:$contentWidth;
+		//articles
+		article{
+			overflow:hidden;
+			&.articleBig{
+				position:relative;
+				clear:both;
+				max-height:620px;
+				&:first-child{
+					max-height:320px;
+				}
+				+ .articleBig{
+					margin-top:$gutter;
+				}
+			}
+		}
+	}
+}
+
+/* back button n-1 */
+.n1BackButton{
+	display:inline-block;
+	height:27px;
+	line-height:27px;
+	margin:15px 0;
+	color:$colorBlack;
+	font-size:rem-calc(14px);
+	span{
+		float:left;
+		margin:0 10px 0 0;
+	}
+}
+
+/* RMs */
+.rmBottom{
+	text-align:center;
+	*{
+		margin:0 auto !important;
+	}
+	a{
+		display:inline-block;
+	}
+}
+
+
+
+
+
+
+

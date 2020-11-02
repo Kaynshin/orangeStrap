@@ -1,0 +1,23 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/*** ORANGESTRAP MAIN FILE ***/
+
+/* import Compass support */
+@import "compass";
+
+/* RESET */
+@import "compass/reset";
+
+/* CORE FILES */
+@import "functions";
+@import "mixins";
+@import "helpers";
+@import "html";
+
+/* /!\ DO NOT IMPORT FLUIDGRID HERE ! /!\ */
+@import "fluidgrid";
+

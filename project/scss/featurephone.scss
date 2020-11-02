@@ -1,0 +1,34 @@
+/****************************************
+-------------- orangeStrap --------------
+@author: David Jomain
+@fileversion: v0.0.1
+****************************************/
+
+/* Fluidgrid configuration for Featurephone */
+$device: 'webphone';
+$collapse:false;
+$gutter:10px;
+$container:768 + $gutter;
+
+//Breakpoints
+$featurephone:(
+	'small':  0px,
+	'medium':  375px,
+	'large':  480px
+) !default;
+
+$media-queries:(
+	grid-s:  "only screen and (min-width:#{map-get($featurephone, small)})",
+	grid-m:  "only screen and (min-width:#{map-get($featurephone, medium)})",
+	grid-l:  "only screen and (min-width:#{map-get($featurephone, large)})"
+);
+
+//Import orangeStrap
+@import "../../core/all-core";
+
+//Import project styles
+@import "all-project";
+
+/* Start specific css for Featurephone */
+
+

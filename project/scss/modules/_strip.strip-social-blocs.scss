@@ -1,0 +1,117 @@
+/* ==================================================
+   FACEBOOK & TWITTER BLOCKS - DESKTOP
+================================================== */
+
+.twitter-logo,
+.facebook-logo {
+    display:inline-block;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin: 5px 5px 25px 0;
+    .icon-twitter,
+    .icon-facebook {
+        color: #FFF;
+        top: 27%;
+        position: relative;
+        left: 27%;
+    }
+}
+ 
+.twitter-logo {
+    background:#55ACEE;
+}
+
+.facebook-logo {
+    background:#3B5998;
+}
+
+.strip-social-blocs {
+    width: 100%;
+    margin: 40px auto;    
+    & > div {
+        box-sizing: content-box;
+    }
+    .bloc-facebook,
+    .bloc-twitter {
+        position:relative;
+        .page-name {
+            font-size: 17px;
+        }
+        .n-fans {
+            font-size: 13px;
+            font-weight:bold;
+            position: absolute;
+            top: 26px;
+            left: 46px;
+        }
+        .button {
+            position:absolute;
+            right:0;
+            top: 10px;
+        }
+    }
+
+    .bloc-facebook {
+        .wrapper {
+            height:300px;
+            .fb-recommendations {
+                overflow-y: auto;
+            }
+            .bloc-quiz .tile.type3.six,
+            .fb-recommendations {
+                float:right;
+                width:53% !important;
+                overflow: hidden;
+            }
+            .bloc-quiz {
+                height:100%;
+                border: 1px solid #AAA;
+                border-top: 1px solid #315C99; 
+
+                .tile.type3.six .meta {
+                    padding:10px;
+                }
+            }
+            .facebook-post {
+                height:100%;
+                float:right;
+                width:47%;
+                border: 1px solid #AAA;
+                border-top: 1px solid #315C99;
+                .image, .image img {
+                    width:100%;
+                    height:auto;
+                    max-height: 240px;
+                }
+                p {
+                    padding:10px 20px;
+                    width:100%;
+                    height: calc(100% - 120px);
+                    font-size: 13.5px;
+                    overflow: hidden;
+                    span {
+                        display:block;
+                        color:#9197a3;
+                        font-size:12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .bloc-twitter {
+        overflow:hidden;
+        .iframe-wrapper {
+            width:100%;
+            height:300px;
+            overflow: hidden;
+            .twitter-timeline {
+                height:100%;
+                width:100% !important;
+                background: #fff;
+                padding:0 10px 0 20px;
+            }
+        }
+    }
+}
